@@ -35,7 +35,7 @@ Alternatively, they can pass in an array of numbers, containing a subset of the 
 Ex.
 ```json
 {
-    banknotes: [10, 100, 1000]
+    "banknotes": [10, 100, 1000]
 }
 ```
 If the user chooses the above configuration - the ATM object (initially) would look like this:
