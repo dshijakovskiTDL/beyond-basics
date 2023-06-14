@@ -79,8 +79,7 @@ Ex.
     "error": "ATM not initialized!"
 }
 ```
-
-&nbsp;
+---
 
 #### Deposit
 To deposit money into the ATM, the user can send a `POST request` to the ATM API endpoint `/deposit` with the body
@@ -92,12 +91,14 @@ To deposit money into the ATM, the user can send a `POST request` to the ATM API
 ```
 
 #### Withdraw
-To withdraw money from the ATM, the user can send a `GET request` to the ATM API endpoint `/withdraw?amount={number}`
+To withdraw money, the user can send a `GET request` to the ATM API endpoint `/withdraw?amount={number}`
+
+---
 
 ### Task
 
-The main task is to program the ATM to insert and return banknotes in the most efficient way possible. \
-What this means is that both when **depositing** (inserting) and **withdrawing** (returning) money - the ATM should do that using **the least amount of banknotes as possible** with the banknotes that it supports.
+Your task is to program the ATM to deposit and withdraw banknotes, in the most efficient way possible. \
+What this means is that both when **depositing** (inserting) and **withdrawing** (returning) money - the ATM should do that using **the least amount of banknotes as possible** - with the banknotes that it supports.
 
 Ex.
 
@@ -148,9 +149,7 @@ const ATM = {
 }
 ```
 
-Your job will be to figure out the algorithm to do this efficient depositing and withdrawal operation.
-
-&nbsp;
+Your job will be to figure out the algorithm to do this efficient deposit and withdraw operation.
 
 > **Important**: If there are not enough money in the ATM, an `error` should be returned.
 
@@ -159,3 +158,10 @@ Your job will be to figure out the algorithm to do this efficient depositing and
     "error": "Not enough money in the ATM!"
 }
 ```
+
+### Remarks
+Feel free to message me in private, or in the **#help** channel if any part of this task is confusing, or you just need clarification on something.
+
+If for any reason you might need an extension to your deadline, please PM me on Discord and we will sort it out.
+
+Good luck, have fun and crush it! 💪
