@@ -60,6 +60,15 @@ If the user chooses the above configuration - the ATM object (initially) would l
 }
 ```
 
+If the initialization is a success, the API returns a success message:
+Ex.
+
+```json
+{
+    "message": "ATM is up and running!"
+}
+```
+
 &nbsp;
 
 
