@@ -4,7 +4,6 @@
 ##### Daniel Shijakovski - Web Developer
 
 ### ATM Machine with API endpoints
-
 This application represents a simplified version of an ATM.
 To start off, the ATM machine is empty. The user can then either **deposit** or **withdraw** money from it.
 
