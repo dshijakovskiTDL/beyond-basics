@@ -240,9 +240,11 @@ If there isn't enough money in the ATM, an `error` should be returned.
 ### Bonus Task - 5 extra points
 
 Add a feature for the user to **check the ATM's balance**. \
-Create an endpoint (ex. `/balance`) which the user can hit to check the state of the ATM.
+Create an endpoint `/balance` which the user can hit to check the state of the ATM.
 
-###### Ex.
+What type of request should this be?
+
+###### Example response
 
 ```json
 {
@@ -264,7 +266,7 @@ If the ATM has not been initialized, return an `error`
 
 In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=348#section-7).
 
-> **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` files in your uploaded file. This will just make the size of the file bigger for no reason.
+> **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` file in your uploaded file. This will just make the size of the submitted file bigger for no reason.
 
 Each of your tasks will have a detailed feedback regarding:
 - ATM initialization part
