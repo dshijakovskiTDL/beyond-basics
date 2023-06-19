@@ -55,7 +55,8 @@ To initialize the ATM, the user must send a `POST request` to the ATM API endpoi
 Notice the `banknotes` field can be `null` - the user can pass in `null` for the ATM to support all the default banknotes. \
 Alternatively, they can pass in an array of numbers, containing a subset of the supported banknotes.
 
-Ex.
+###### Example
+
 ```json
 {
     "banknotes": [10, 100, 1000]
@@ -86,7 +87,8 @@ If the user chooses the above configuration - the ATM object (initially) would l
 ```
 
 If the initialization is a success, the API returns a success message:
-Ex.
+
+###### Example
 
 ```json
 {
