@@ -20,7 +20,7 @@ The deadline to complete the task will be **2 weeks** from the day this is uploa
 #### Points System
 
 The total amount of points you can receive is **50 points** + an optional bonus task of **5 points**. \
-In order to pass, you will need to receive at least **60% of the total points** or **30 points or more**.
+In order to pass, you will need to receive at least **60% of the total points** i.e. **30 points or more**.
 
 ---
 
