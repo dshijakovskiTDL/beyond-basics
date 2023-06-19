@@ -192,11 +192,11 @@ Below are some examples of how that might look like.
 {
     "message": "Successful DEPOSIT of 390 TDL dollars!",
     "transaction": {
-        "100": 3, // Meaning: Used 3 banknotes of 100 TDL dollars
-        "20": 4, // Meaning: Used 4 banknotes of 20 TDL dollars
-        "10": 1, // Meaning: Used 1 banknote of 10 TDL dollars
+        "100": 3, // Used 3 banknotes of 100 TDL dollars
+        "20": 4, // Used 4 banknotes of 20 TDL dollars
+        "10": 1, // Used 1 banknote of 10 TDL dollars
 
-        "total": 390 // Meaning: The total amount of money DEPOSITED
+        "total": 390 // The total amount of money DEPOSITED
         // NOT the total amount of money in the ATM
     }
 }
@@ -207,10 +207,10 @@ Below are some examples of how that might look like.
 {
     "message": "Successful WITHDRAWAL of 70 TDL dollars!",
     "transaction": {
-        "20": 3, // Meaning: Used 3 banknotes of 20 TDL dollars
-        "10": 1, // Meaning: Used 1 banknote of 10 TDL dollars
+        "20": 3, // Used 3 banknotes of 20 TDL dollars
+        "10": 1, // Used 1 banknote of 10 TDL dollars
 
-        "total": 70 // Meaning: The total amount of money WITHDRAWN
+        "total": 70 // The total amount of money WITHDRAWN
         // NOT the total amount of money in the ATM
     }
 }
