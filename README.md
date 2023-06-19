@@ -26,7 +26,7 @@ In order to pass, you will need to receive at least **60% of the total points** 
 
 ### ATM Machine with API endpoints
 
-This application represents a simplified version of an ATM.
+This application represents a simplified version of an ATM. You need to build an [Express](https://expressjs.com/) server that listens to various endpoints, to mimic the behavior of an ATM. \
 To start off, the ATM machine is empty. The user needs to **initialize** it first, after which they can either **deposit** or **withdraw** money to/from it.
 
 #### ATM data model
