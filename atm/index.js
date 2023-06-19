@@ -1,17 +1,9 @@
-// * Express - npm package for building servers in Node.js https://expressjs.com/
-import express from 'express'
+// TODO: 1. Import the necessary packages and start up a server
 
-// ? We first need to create a server instance and a port number to listen to
-const server = express()
-const PORT = 3000
+// TODO: 2. Implement ATM initialization => `/`
 
-// ? To start up the server - we can call the method listen()
-// ? We are not listening for requests at http://localhost:3000
-server.listen(PORT, () => {
-    console.log(`Listening at port ${PORT}`)
-})
+// TODO: 3. Implement ATM deposit => `/deposit`
 
-// * Listen for GET requests
-server.get('/', (request, response) => {
-    response.json({ message: 'Hi there!' })
-})
+// TODO: 4. Implement ATM withdraw => `/withdraw`
+
+// TODO: BONUS - Implement ATM balance check => `/balance`
