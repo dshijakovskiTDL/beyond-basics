@@ -8,23 +8,26 @@
 ### Introduction
 
 This is the Final task required to complete the course on Intermediate level JavaScript. \
-When implementing the task, try to use the **latest ES6 features** we talked about throughout the course. Try to make your cod clean and easy to read and **avoid duplication of code**, as much as you can.
+When implementing the task, try to use the **latest ES6 features** we talked about throughout the course. Try to make your code clean and easy to read. Also, try to **avoid duplication of code** as much as you can.
 
 #### Deadline
 
 The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
+
+**Start Date**: Tuesday, 20 June 2023, 00:00
+**End Date**: Tuesday, 4 July 2023, 23:59
 
 #### Points System
 
 The total amount of points you can receive is **50 points** + an optional bonus task of **5 points**. \
 In order to pass, you will need to receive at least **60% of the total points** or **30 points or more**.
 
-&nbsp;
+---
 
 ### ATM Machine with API endpoints
 
 This application represents a simplified version of an ATM.
-To start off, the ATM machine is empty. The user can then either **deposit** or **withdraw** money from it.
+To start off, the ATM machine is empty. The user needs to **initialize** it first, then they can then either **deposit** or **withdraw** money to/from it.
 
 #### ATM data model
 
@@ -32,16 +35,16 @@ The ATM will be represented by an object with the following properties:
 - `total` - representing the total amount of TDL dollars currently stored in the ATM
 - dynamic keys representing the banknotes that the ATM can support
 
-##### ALL Supported banknotes: 5, 10, 20, 100, 500, 1000
+##### ALL Supported banknotes: 1, 5, 10, 20, 100, 500, 1000
 
 > **Important**: The `1` banknote is supported by default 
 
-The user creates the ATM at the beginning of the app, providing the supported banknotes - they can either choose to support some of the banknotes, or support all of the banknotes provided above.
+The user initializes the ATM at the beginning of the app, providing the supported banknotes - they can either choose to **support some of the banknotes**, or **support all of the banknotes** provided above.
 
 #### Initializing the ATM - 10 points
 
-At the beginning of the app, the ATM object is `null` - meaning it is not initialized. \
-To create the ATM, the user must send a `POST request` to the ATM API endpoint `/` with the body
+At the beginning of the app, the ATM object is not initialized. \
+To initialize the ATM, the user must send a `POST request` to the ATM API endpoint `/` with the body
 
 ```json
 { 
@@ -70,7 +73,7 @@ If the user chooses the above configuration - the ATM object (initially) would l
     };
 ```
 
-> **Hint**: Is a regular object the best approach? Is there maybe another data structure better fit to handle this type of data?
+> **Note**: Is a regular object the best approach for representing the ATM? Is there maybe another data structure better fit to handle this type of data?
 
 &nbsp;
 
@@ -124,7 +127,7 @@ To withdraw money, the user can send a `GET request` to the ATM API endpoint `/w
 Your task is to program the ATM to deposit and withdraw banknotes, **in the most efficient way possible**. \
 What this means is that both when **depositing** (inserting) and **withdrawing** (returning) money - the ATM should do that using **the least amount of banknotes as possible** - with the banknotes that it supports.
 
-Ex.
+###### Example
 
 Let's say the ATM is empty and looks like this:
 
@@ -172,7 +175,7 @@ const ATM = {
     total: 320
 }
 ```
-&nbsp;
+---
 
 #### What is your job?
 
@@ -181,39 +184,41 @@ Below are some examples of how that might look like.
 
 > **Note**: You can use the provided examples are your template or choose your own way of representing the transaction
 
-###### Ex. Successfully *depositing* 390 TDL dollars
+###### Example - Successfully *depositing* 390 TDL dollars
 
 ```json
 {
     "message": "Successful DEPOSIT of 390 TDL dollars!",
     "transaction": {
-        "100": 3,
-        "20": 4,
-        "10": 1,
-        "total": 390 // Represents the total amount of money DEPOSITED. NOT the total amount of money in the ATM
+        "100": 3, // Meaning: Used 3 banknotes of 100 TDL dollars
+        "20": 4, // Meaning: Used 4 banknotes of 20 TDL dollars
+        "10": 1, // Meaning: Used 1 banknote of 10 TDL dollars
+
+        "total": 390 // Meaning: The total amount of money DEPOSITED
+        // NOT the total amount of money in the ATM
     }
 }
 ```
-###### Ex. Successfully *withdrawing* 70 TDL dollars
+###### Example - Successfully *withdrawing* 70 TDL dollars
 
 ```json
 {
     "message": "Successful WITHDRAWAL of 70 TDL dollars!",
     "transaction": {
-        "20": 3,
-        "10": 1,
-        "total": 70 // Represents the total amount of money WITHDRAWN. NOT the total amount of money in the ATM
+        "20": 3, // Meaning: Used 3 banknotes of 20 TDL dollars
+        "10": 1, // Meaning: Used 1 banknote of 10 TDL dollars
+
+        "total": 70 // Meaning: The total amount of money WITHDRAWN
+        // NOT the total amount of money in the ATM
     }
 }
 ```
 
-&nbsp;
-
 #### Important components of the returned response
 
-However you choose to structure your response to a successful transaction, you must include these 3 pieces of information inside of your response:
+However you choose to structure your response for a successful transaction, you must include these 3 pieces of information inside of your response:
 - The **type** of the transaction (deposit/withdraw)
-- The **number and type of banknotes** used in the transaction
+- The **type and number of banknotes** used in the transaction
 - The **total amount of money** deposited/withdrawn
 
 Again, your response **doesn't need** to look like the ones above, it just needs to contain the above mentioned information in any shape you choose.
@@ -228,7 +233,7 @@ If there isn't enough money in the ATM, an `error` should be returned.
 }
 ```
 
-&nbsp;
+---
 
 ### Bonus Task - 5 extra points
 
