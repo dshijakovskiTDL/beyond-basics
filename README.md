@@ -3,11 +3,31 @@
 
 ##### Daniel Shijakovski - Web Developer
 
+---
+
+### Introduction
+
+This is the Final task required to complete the course on Intermediate level JavaScript. \
+When implementing the task, try to use the **latest ES6 features** we talked about throughout the course. Try to make your cod clean and easy to read and **avoid duplication of code**, as much as you can.
+
+#### Deadline
+
+The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
+
+#### Points System
+
+The total amount of points you can receive is **50 points** + an optional bonus task of **5 points**. \
+In order to pass, you will need to receive at least **60% of the total points** or **30 points or more**.
+
+&nbsp;
+
 ### ATM Machine with API endpoints
+
 This application represents a simplified version of an ATM.
 To start off, the ATM machine is empty. The user can then either **deposit** or **withdraw** money from it.
 
 #### ATM data model
+
 The ATM will be represented by an object with the following properties:
 - `total` - representing the total amount of TDL dollars currently stored in the ATM
 - dynamic keys representing the banknotes that the ATM can support
@@ -18,7 +38,8 @@ The ATM will be represented by an object with the following properties:
 
 The user creates the ATM at the beginning of the app, providing the supported banknotes - they can either choose to support some of the banknotes, or support all of the banknotes provided above.
 
-#### Initializing the ATM
+#### Initializing the ATM - 10 points
+
 At the beginning of the app, the ATM object is `null` - meaning it is not initialized. \
 To create the ATM, the user must send a `POST request` to the ATM API endpoint `/` with the body
 
@@ -49,6 +70,8 @@ If the user chooses the above configuration - the ATM object (initially) would l
     };
 ```
 
+> **Hint**: Is a regular object the best approach? Is there maybe another data structure better fit to handle this type of data?
+
 &nbsp;
 
 > **Important**: If the list of banknotes contains a banknote that isn't supported - the entire list is considered invalid and an `error` should be returned.
@@ -75,12 +98,13 @@ Ex.
 
 ```json
 {
-    "error": "ATM not initialized!"
+    "error": "Cannot make transaction. ATM is not initialized!"
 }
 ```
 ---
 
-#### Deposit
+#### Deposit - 20 points
+
 To deposit money into the ATM, the user can send a `POST request` to the ATM API endpoint `/deposit` with the body
 
 ```json
@@ -89,14 +113,15 @@ To deposit money into the ATM, the user can send a `POST request` to the ATM API
 }
 ```
 
-#### Withdraw
-To withdraw money, the user can send a `GET request` to the ATM API endpoint `/withdraw?amount={number}`
+#### Withdraw - 20 points
+
+To withdraw money, the user can send a `GET request` to the ATM API endpoint `/withdraw` with the query parameter `amount={number}`
 
 ---
 
 ### Task
 
-Your task is to program the ATM to deposit and withdraw banknotes, in the most efficient way possible. \
+Your task is to program the ATM to deposit and withdraw banknotes, **in the most efficient way possible**. \
 What this means is that both when **depositing** (inserting) and **withdrawing** (returning) money - the ATM should do that using **the least amount of banknotes as possible** - with the banknotes that it supports.
 
 Ex.
@@ -147,10 +172,55 @@ const ATM = {
     total: 320
 }
 ```
+&nbsp;
 
-Your job will be to figure out the algorithm to do this efficient deposit and withdraw operation.
+#### What is your job?
 
-> **Important**: If there are not enough money in the ATM, an `error` should be returned.
+Your job will be to figure out the algorithm to do this efficient deposit and withdraw operation. In addition, when a transaction is successful, you will need to return an **message** to the user, **saying that the transaction was successful** and **return some kind of text representation of what the transaction looked like**. \
+Below are some examples of how that might look like.
+
+> **Note**: You can use the provided examples are your template or choose your own way of representing the transaction
+
+###### Ex. Successfully *depositing* 390 TDL dollars
+
+```json
+{
+    "message": "Successful DEPOSIT of 390 TDL dollars!",
+    "transaction": {
+        "100": 3,
+        "20": 4,
+        "10": 1,
+        "total": 390 // Represents the total amount of money DEPOSITED. NOT the total amount of money in the ATM
+    }
+}
+```
+###### Ex. Successfully *withdrawing* 70 TDL dollars
+
+```json
+{
+    "message": "Successful WITHDRAWAL of 70 TDL dollars!",
+    "transaction": {
+        "20": 3,
+        "10": 1,
+        "total": 70 // Represents the total amount of money WITHDRAWN. NOT the total amount of money in the ATM
+    }
+}
+```
+
+&nbsp;
+
+#### Important components of the returned response
+
+However you choose to structure your response to a successful transaction, you must include these 3 pieces of information inside of your response:
+- The **type** of the transaction (deposit/withdraw)
+- The **number and type of banknotes** used in the transaction
+- The **total amount of money** deposited/withdrawn
+
+Again, your response **doesn't need** to look like the ones above, it just needs to contain the above mentioned information in any shape you choose.
+
+##### What if there isn't enough money in the ATM?
+
+If there isn't enough money in the ATM, an `error` should be returned.
 
 ```json
 {
@@ -158,9 +228,58 @@ Your job will be to figure out the algorithm to do this efficient deposit and wi
 }
 ```
 
-### Remarks
+&nbsp;
+
+### Bonus Task - 5 extra points
+
+Add a feature for the user to **check the ATM's balance**. \
+Create an endpoint (ex. `/balance`) which the user can hit to check the state of the ATM.
+
+###### Ex.
+
+```json
+{
+    "balance": number // The total amount of money in the ATM
+}
+```
+
+If the ATM has not been initialized, return an `error`
+
+```json
+{
+    "error": "Cannot check balance. ATM is not initialized!"
+}
+```
+
+---
+
+### Submitting the task
+
+In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=348#section-7).
+
+> **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` files in your uploaded file. This will just make the size of the file bigger for no reason.
+
+Each of your tasks will have a detailed feedback regarding:
+- ATM initialization part
+- Deposit feature
+- Withdraw feature
+- Optional bonus task (if it's implemented)
+- Overall code structure - how readable/understandable it is
+
+> **Note**: If there is no feedback for a particular point, that means that you did an amazing job, no notes 🥳
+
+
+### Final Remarks
+
 Feel free to message me in private, or in the **#help** channel if any part of this task is confusing, or you just need clarification on something.
 
 If for any reason you might need an extension to your deadline, please PM me on Discord and we will sort it out.
 
-Good luck, have fun and crush it! 💪
+#### Note on expected review results
+
+Please keep in mind that there are more than 40 participants in this course, so it may take me a bit of time to go through and review all of the tasks. \
+If you need your task to be reviewed earlier, due to performance reviews or something else, please message me on Discord and I will try to get to it as soon as possible.
+
+&nbsp;
+
+**Good luck, have fun and crush it!** 💪
