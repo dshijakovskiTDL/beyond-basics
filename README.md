@@ -27,7 +27,7 @@ In order to pass, you will need to receive at least **60% of the total points** 
 ### ATM Machine with API endpoints
 
 This application represents a simplified version of an ATM.
-To start off, the ATM machine is empty. The user needs to **initialize** it first, then they can then either **deposit** or **withdraw** money to/from it.
+To start off, the ATM machine is empty. The user needs to **initialize** it first, after which they can either **deposit** or **withdraw** money to/from it.
 
 #### ATM data model
 
