@@ -14,13 +14,13 @@ When implementing the task, try to use the **latest ES6 features** we talked abo
 
 The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
 
-**Start Date**: Tuesday, 20 June 2023, 00:00 \
-**End Date**: Sunday, 9 July 2023, 23:59
+**Start Date**: 18.12.2023, 00:00 \
+**End Date**: 01.01.2024, 23:59
 
 #### Points System
 
 The total amount of points you can receive is **50 points** + an optional bonus task of **5 points**. \
-In order to pass, you will need to receive at least **60% of the total points** i.e. **30 points or more**.
+In order to pass, you will need to receive at least **70% of the total points** i.e. **30 points or more**.
 
 ---
 
@@ -264,9 +264,9 @@ If the ATM has not been initialized, return an `error`
 
 ### Submitting the task
 
-In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=348#section-7).
+In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=429#section-7).
 
-> **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` file in your uploaded file. This will just make the size of the submitted file bigger for no reason.
+> **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` file in your uploaded file. This will just make the size of the submitted file bigger.
 
 Each of your tasks will have a detailed feedback regarding:
 - ATM initialization part
@@ -283,11 +283,6 @@ Each of your tasks will have a detailed feedback regarding:
 Feel free to message me in private, or in the **#help** channel if any part of this task is confusing, or you just need clarification on something.
 
 If for any reason you might need an extension to your deadline, please PM me on Discord and we will sort it out.
-
-#### Note on expected review results
-
-Please keep in mind that there are more than 40 participants in this course, so it may take me a bit of time to go through and review all of the tasks. \
-If you need your task to be reviewed earlier, due to performance reviews or something else, please message me on Discord and I will try to get to it as soon as possible.
 
 &nbsp;
 
