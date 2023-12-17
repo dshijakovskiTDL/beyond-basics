@@ -14,13 +14,13 @@ When implementing the task, try to use the **latest ES6 features** we talked abo
 
 The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
 
-**Start Date**: 18.12.2023, 00:00 \
-**End Date**: 01.01.2024, 23:59
+**Start Date**: 18.12.2023, 09:00 \
+**End Date**: 01.01.2024, 09:00
 
 #### Points System
 
 The total amount of points you can receive is **50 points** + an optional bonus task of **5 points**. \
-In order to pass, you will need to receive at least **70% of the total points** i.e. **30 points or more**.
+In order to pass, you will need to receive at least **70% of the total points** i.e. **35 points or more**.
 
 ---
 
@@ -35,11 +35,11 @@ The ATM will be represented by an object with the following properties:
 - `total` - representing the total amount of TDL dollars currently stored in the ATM
 - dynamic keys representing the banknotes that the ATM can support
 
-##### ALL Supported banknotes: 1, 5, 10, 20, 100, 500, 1000
+##### Banknotes that CAN be supported: 1, 5, 10, 20, 100, 500, 1000
 
-> **Important**: The `1` banknote is supported by default 
+> **Important**: The `1` banknote should ALWAYS be supported
 
-The user initializes the ATM at the beginning of the app, providing the supported banknotes - they can either choose to **support some of the banknotes**, or **support all of the banknotes** provided above.
+The user initializes the ATM at the beginning of the app, **providing the supported banknotes** - they can either choose to **support some of the banknotes**, or **support all of the banknotes** provided above.
 
 #### Initializing the ATM - 10 points
 
@@ -52,7 +52,7 @@ To initialize the ATM, the user must send a `POST request` to the ATM API endpoi
 }
 ```
 
-Notice the `banknotes` field can be `null` - the user can pass in `null` for the ATM to support all the default banknotes. \
+Notice the `banknotes` field can be `null` - **the user can pass in `null` or an empty array** for the ATM to support all the default banknotes. \
 Alternatively, they can pass in an array of numbers, containing a subset of the supported banknotes.
 
 ###### Example
@@ -66,7 +66,7 @@ If the user chooses the above configuration - the ATM object (initially) would l
 
 ```js
     const ATM = {
-        1: 0, // supported by default
+        1: 0, // The '1' banknote is here because it should ALWAYS be supported
         10: 0,
         100: 0,
         1000: 0,
@@ -78,7 +78,7 @@ If the user chooses the above configuration - the ATM object (initially) would l
 
 &nbsp;
 
-> **Important**: If the list of banknotes contains a banknote that isn't supported - the entire list is considered invalid and an `error` should be returned.
+> **Important**: If the list of banknotes provided by the user, contains a banknote that isn't supported - the entire list is considered invalid and an `error` should be returned.
 
 ```json
 {
@@ -218,7 +218,7 @@ Below are some examples of how that might look like.
 
 #### Important components of the returned response
 
-However you choose to structure your response for a successful transaction, you must include these 3 pieces of information inside of your response:
+However you choose to structure your response for a successful transaction, you **must** include these 3 pieces of information inside of your response:
 - The **type** of the transaction (deposit/withdraw)
 - The **type and number of banknotes** used in the transaction
 - The **total amount of money** deposited/withdrawn
@@ -234,6 +234,22 @@ If there isn't enough money in the ATM, an `error` should be returned.
     "error": "Not enough money in the ATM!"
 }
 ```
+
+##### What if there IS enough money but NOT ENOUGH banknotes?
+
+In the case that there are not enough banknotes to complete a withdrawal, an error should be returned.
+
+```json
+{
+    "error": "Not enough banknotes to complete the transaction!"
+}
+```
+
+**Example:** \
+The ATM only has 2 banknotes of 20 TDL dollars - this means it has a total of 40 TDL dollars \
+The user asks for 30 TDL dollars \
+In this case, while the total IS technically larger than the requested amount - the ATM doesn't have the APPROPRIATE BANKNOTES to perform this transaction (1x10 + 1x20), since it only has 2x20 banknotes \
+This should then be considered an error with an response like the one above.
 
 ---
 
@@ -267,16 +283,6 @@ If the ATM has not been initialized, return an `error`
 In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=429#section-7).
 
 > **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` file in your uploaded file. This will just make the size of the submitted file bigger.
-
-Each of your tasks will have a detailed feedback regarding:
-- ATM initialization part
-- Deposit feature
-- Withdraw feature
-- Optional bonus task (if it's implemented)
-- Overall code structure - how readable/understandable it is
-
-> **Note**: If there is no feedback for a particular point, that means that you did an amazing job, no notes 🥳
-
 
 ### Final Remarks
 

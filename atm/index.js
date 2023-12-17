@@ -1,4 +1,4 @@
-// TODO: 1. Import the necessary packages and start up a server
+// TODO: 1. Install/Import the necessary packages and start up a server
 
 // TODO: 2. Implement ATM initialization => `/`
 
