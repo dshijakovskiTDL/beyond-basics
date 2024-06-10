@@ -14,8 +14,8 @@ When implementing the task, try to use the **latest ES6 features** we talked abo
 
 The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
 
-**Start Date**: 10.06.2024, 09:00 \
-**End Date**: 24.06.2024, 09:00
+**Start Date**: 10.06.2024, 12:00 PM \
+**End Date**: 26.06.2024, 12:00 PM
 
 #### Points System
 
