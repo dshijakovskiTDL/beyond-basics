@@ -14,8 +14,8 @@ When implementing the task, try to use the **latest ES6 features** we talked abo
 
 The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
 
-**Start Date**: 10.06.2024, 12:00 PM \
-**End Date**: 26.06.2024, 12:00 PM
+**Start Date**: 23.12.2024, 12:00 PM \
+**End Date**: 10.01.2025, 12:00 PM
 
 #### Points System
 
@@ -37,7 +37,7 @@ The ATM will be represented by an object with the following properties:
 
 ##### Banknotes that CAN be supported: 1, 5, 10, 20, 100, 500, 1000
 
-> **Important**: The `1` banknote should ALWAYS be supported
+> **Important**: The `1` banknote should ALWAYS be supported by default
 
 The user initializes the ATM at the beginning of the app, **providing the supported banknotes** - they can either choose to **support some of the banknotes**, or **support all of the banknotes** provided above.
 
@@ -245,7 +245,7 @@ In the case that there are not enough banknotes to complete a withdrawal, an err
 }
 ```
 
-**Example:** \
+###### Example
 The ATM only has 2 banknotes of 20 TDL dollars - this means it has a total of 40 TDL dollars \
 The user asks for 30 TDL dollars \
 In this case, while the total IS technically larger than the requested amount - the ATM doesn't have the APPROPRIATE BANKNOTES to perform this transaction (1x10 + 1x20), since it only has 2x20 banknotes \
