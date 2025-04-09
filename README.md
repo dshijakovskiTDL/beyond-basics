@@ -14,8 +14,8 @@ When implementing the task, try to use the **latest ES6 features** we talked abo
 
 The deadline to complete the task will be **2 weeks** from the day this is uploaded to Moodle.
 
-**Start Date**: 23.12.2024, 12:00 PM \
-**End Date**: 10.01.2025, 12:00 PM
+**Start Date**: 09.04.2025, 10:00 AM \
+**End Date**: 25.04.2025, 10:00 AM
 
 #### Points System
 
@@ -143,7 +143,7 @@ const ATM = {
 }
 ```
 
-If we then choose to store **390 TDL dollars** into it, the most efficient way to do that would be to store it with:
+If we then choose to deposit **390 TDL dollars** into it, the most efficient way to do that would be to store it with:
 - 3 x 100 banknotes => **300**
 - 4 x 20 banknotes => **80**
 - 1 x 10 banknote => **10**
@@ -161,7 +161,7 @@ const ATM = {
 }
 ```
 
-If we then choose to take out **70 TDL dollars**, the most efficient way to do that would be to return them using:
+If we then choose to withdraw **70 TDL dollars**, the most efficient way to do that would be to return them using:
 - 3 x 20 banknotes => **60**
 - 1 x 10 banknote => **10**
 - Total: **70**
@@ -280,7 +280,7 @@ If the ATM has not been initialized, return an `error`
 
 ### Submitting the task
 
-In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=429#section-7).
+In order to submit the Final task, you can just **zip/compress** the entire directory and upload it to the [Final Task section](https://moodle.tdlschool.com/course/view.php?id=572#section-7).
 
 > **Important**: DO NOT include the `node_modules` folder or the `package-lock.json` file in your uploaded file. This will just make the size of the submitted file bigger.
 
